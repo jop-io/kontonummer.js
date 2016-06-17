@@ -42,4 +42,22 @@ Ett demo finns tillgängligt här: [http://jop.io/projects/kontonummer-js](http:
 ```
 
 # Användning
-asd
+```javascript
+var result = kontonummer('9420, 417 23 85');
+console.log(result);
+
+/* Skriver ut följande objekt till konsolen:
+
+{
+  bank_name: "Forex Bank",
+  account_type: "Bankkonto", 
+  clearing_number: "9420", 
+  account_number: "4172385"
+}
+*/
+```
+```javascript
+var result = kontonummer('123456789');
+console.log(result); // false
+```
+
