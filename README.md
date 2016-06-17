@@ -1,5 +1,5 @@
 # kontonummer.js
-Kontonummer.js är ett bibliotek för att kontroller och validera svenska bankkontonummer. Biblioteket kan användas för att ta reda på vilken bank ett kontonummer tillhör, samt om kontonumret valideras som giltigt enligt stanadrd.
+Kontonummer.js är ett bibliotek för att kontroller och validera svenska bankkontonummer. Biblioteket kan användas för att ta reda på vilken bank ett kontonummer tillhör, samt om kontonumret valideras som giltigt enligt standard.
 
 Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. För närvarande stöds följande banker:
 * Amfa Bank
