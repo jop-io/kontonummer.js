@@ -28,6 +28,7 @@ Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. F
 * Nordea
 * Nordnet Bank
 * Resurs Bank
+* Riksgälden
 * Royal Bank of Scotland
 * SantanderConsumer Bank
 * SBAB
@@ -65,3 +66,8 @@ var result = kontonummer('123456789');
 console.log(result); // false
 ```
 
+# Uppdateringar
+* 2016-06-18: Adderade Riksgälden
+
+# Licens
+Kontonummer.js omfattas av licensformen [MIT](https://opensource.org/licenses/MIT "The MIT License"). Varsågod!
