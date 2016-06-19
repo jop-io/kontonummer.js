@@ -30,7 +30,7 @@ Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. F
 * Resurs Bank
 * Riksgälden
 * Royal Bank of Scotland
-* SantanderConsumer Bank
+* Santander Consumer Bank
 * SBAB
 * SEB
 * Skandiabanken
