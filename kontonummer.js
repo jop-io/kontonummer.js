@@ -13,8 +13,9 @@
  *  DnB Bank, Ekobanken, Erik Penser Bankaktiebolag, Forex Bank, Handelsbanken, 
  *  ICA Banken, IKANO Banken, JAK Medlemsbank, Landshypotek, Lån och Spar Bank 
  *  Sverige, Länsförsäkringar Bank, Marginalen Bank, Nordax Bank, Nordea, 
- *  Nordnet Bank, Resurs Bank, Royal Bank of Scotland, SantanderConsumer Bank, 
- *  SBAB, SEB, Skandiabanken, Sparbanken Syd, Swedbank, Ålandsbanken
+ *  Nordnet Bank, Resurs Bank, Riksgälden, Royal Bank of Scotland, Santander 
+ *  Consumer Bank, SBAB, SEB, Skandiabanken, Sparbanken Syd, Swedbank, 
+ *  Ålandsbanken
  * 
  * Licens: MIT
  * Författare: @jop-io, http://jop.io
@@ -179,7 +180,7 @@
             [4,7,11,11],
             /^(909[0-9])([0-9]{7})$/
         ],[
-            'SantanderConsumer Bank',
+            'Santander Consumer Bank',
             'Bankkonto',
             [4,7,10,11],
             /^(946[0-9])([0-9]{7})$/
