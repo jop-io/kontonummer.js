@@ -55,7 +55,6 @@ console.log(result);
 
 {
   bank_name: "Forex Bank",
-  account_type: "Bankkonto", 
   clearing_number: "9420", 
   account_number: "4172385"
 }
