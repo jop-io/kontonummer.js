@@ -190,14 +190,13 @@
     
         for (i in banks) {
             b = banks[i];
-            if (b[3].test(n) && 
-                ((b[2][3] === 11 && mod11(n.substr(n.length-b[2][2], b[2][2]))) || 
-                (b[2][3] === 10 && mod10(n.substr(n.length-b[2][2], b[2][2]))))) {
+            if (b[2].test(n) && 
+                ((b[1][3] === 11 && mod11(n.substr(n.length-b[1][2], b[1][2]))) || 
+                (b[1][3] === 10 && mod10(n.substr(n.length-b[1][2], b[1][2]))))) {
                 return {
                     bank_name       : b[0],
-                    account_type    : b[1],
-                    clearing_number : n.substr(0, b[2][0]),
-                    account_number  : n.substr(b[2][0], b[2][1])
+                    clearing_number : n.substr(0, b[1][0]),
+                    account_number  : n.substr(b[1][0], b[1][1])
                 };
             }
         }
