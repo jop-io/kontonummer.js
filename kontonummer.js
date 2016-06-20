@@ -33,170 +33,359 @@
         if (typeof number !== 'string') {
             return false;
         }
-        var n = number.replace(/\D/g, ''), i, b, 
-        banks = [[
-            'Avanza Bank',
-            [4,7,11,11],
-            /^(95[5-6][0-9])([0-9]{7})$/
-        ],[
-            'Amfa Bank',
-            [4,7,11,11],
-            /^(966[0-9])([0-9]{7})$/
-        ],[
-            'BlueStep Finans',
-            [4,7,10,11],
-            /^(968[0-9])([0-9]{7})$/
-        ],[
-            'BNP',
-            [4,7,11,11],
-            /^(947[0-9])([0-9]{7})$/
-        ],[
-            'Citibank',
-            [4,7,11,11],
-            /^(904[0-9])([0-9]{7})$/
-        ],[
-            'Danske Bank',
-            [4,7,10,11],
-            /^(1[2-3][0-9][0-9]|24[0-9][0-9])([0-9]{7})$/
-        ],[
-            'Danske Bank',
-            [4,10,10,10],
-            /^(918[0-9])([0-9]{10})$/
-        ],[
-            'DnB Bank',
-            [4,7,11,11],
-            /^(919[0-9]|926[0-9])([0-9]{7})$/
-        ],[
-            'Ekobanken',
-            [4,7,11,11],
-            /^(970[0-9])([0-9]{8})$/
-        ],[
-            'Erik Penser Bankaktiebolag',
-            [4,7,11,11],
-            /^(959[0-9])([0-9]{7})$/
-        ],[
-            'Forex Bank',
-            [4,7,10,11],
-            /^(94[0-4][0-9])([0-9]{7})$/
-        ],[
-            'Handelsbanken',
-            [4,9,9,11],
-            /^(6[0-9][0-9][0-9])([0-9]{9})$/
-        ],[
-            'ICA Banken',
-            [4,7,10,11],
-            /^(927[0-9])([0-9]{7})$/
-        ],[
-            'IKANO Banken',
-            [4,7,10,11],
-            /^(917[0-9])([0-9]{7})$/
-        ],[
-            'JAK Medlemsbank',
-            [4,7,11,11],
-            /^(967[0-9])([0-9]{8})$/
-        ],[
-            'Landshypotek',
-            [4,7,11,11],
-            /^(939[0-9])([0-9]{7})$/
-        ],[
-            'Lån och Spar Bank Sverige',
-            [4,7,10,11],
-            /^(963[0-9])([0-9]{7})$/
-        ],[
-            'Länsförsäkringar Bank',
-            [4,7,10,11],
-            /^(340[0-9]|906[0-9])([0-9]{7})$/
-        ],[
-            'Länsförsäkringar Bank',
-            [4,7,11,11],
-            /^(902[0-9])([0-9]{7})$/
-        ],[
-            'Marginalen Bank',
-            [4,7,10,11],
-            /^(923[0-9])([0-9]{7})$/
-        ],[
-            'Nordax Bank',
-            [4,7,11,11],
-            /^(964[0-9])([0-9]{7})$/
-        ],[
-            'Nordea',
-            [4,7,10,11],
-            /^(11[0-9][0-9]|1[4-9][0-9][0-9]|20[0-9][0-9]|30[0-9][0-9]|330[1-9]|33[1-9][0-9]|34[1-9][0-9]|3[5-9][0-9][0-9])([0-9]{7})$/
-        ],[
-            'Nordea',
-            [4,7,11,11],
-            /^(4[0-9][0-9][0-9])([0-9]{7})$/
-        ],[
-            'Nordea',
-            [4,10,10,10],
-            /^(3300|3782)([0-9]{10})$/
-        ],[
-            'Nordea',
-            [0,10,10,10],
-            /^([0-9][0-9])(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])([0-9]{4})$/
-        ],[
-            'Nordnet Bank',
-            [4,7,11,11],
-            /^(910[0-9])([0-9]{7})$/
-        ],[
-            'Resurs Bank',
-            [4,7,10,11],
-            /^(928[0-9])([0-9]{7})$/
-        ],[
-            'Riksgälden',
-            [4,10,10,10],
-            /^(989[0-9])([0-9]{10})$/
-        ],[
-            'Royal Bank of Scotland',
-            [4,7,11,11],
-            /^(909[0-9])([0-9]{7})$/
-        ],[
-            'Santander Consumer Bank',
-            [4,7,10,11],
-            /^(946[0-9])([0-9]{7})$/
-        ],[
-            'SBAB',
-            [4,7,10,11],
-            /^(925[0-9])([0-9]{7})$/
-        ],[
-            'SEB',
-            [4,7,10,11],
-            /^(5[0-9][0-9][0-9]|912[0-4]|91[3-4][0-9])([0-9]{7})$/
-        ],[
-            'Skandiabanken',
-            [4,7,11,11],
-            /^(91[5-6][0-9])([0-9]{7})$/
-        ],[
-            'Sparbanken Syd',
-            [4,10,10,10],
-            /^(957[0-9])([0-9]{10})$/
-        ],[
-            'Swedbank',
-            [4,7,10,11],
-            /^(7[0-9][0-9][0-9])([0-9]{7})$/
-        ],[
-            'Swedbank',
-            [4,10,10,10],
-            /^(93[0-2][0-9])([0-9]{10})$/
-        ],[
-            'Swedbank',
-            [5,10,10,10],
-            /^(8[0-9]{4})([0-9]{10})$/
-        ],[
-            'Ålandsbanken',
-            [4,7,11,11],
-            /^(23[0-9][0-9])([0-9]{7})$/
-        ]];
+        var n = number.replace(/\D/g, ''), i, b, cn, 
+        banks = [{
+            name    : 'Avanza Bank',
+            regex   : /^(95[5-6][0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Amfa Bank',
+            regex   : /^(966[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'BlueStep Finans',
+            regex   : /^(968[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'BNP',
+            regex   : /^(947[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Citibank',
+            regex   : /^(904[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Danske Bank',
+            regex   : /^(1[2-3][0-9][0-9]|24[0-9][0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'Danske Bank',
+            regex   : /^(918[0-9])([0-9]{10})$/,
+            modulo  : 10,
+            lengths : {
+                clearing : 4,
+                account  : 10,
+                control  : 10
+            }
+        },{
+            name    : 'DnB Bank',
+            regex   : /^(919[0-9]|926[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Ekobanken',
+            regex   : /^(970[0-9])([0-9]{8})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Erik Penser Bankaktiebolag',
+            regex   : /^(959[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Forex Bank',
+            regex   : /^(94[0-4][0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'Handelsbanken',
+            regex   : /^(6[0-9][0-9][0-9])([0-9]{9})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 9,
+                control  : 9
+            }
+        },{
+            name    : 'ICA Banken',
+            regex   : /^(927[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'IKANO Banken',
+            regex   : /^(917[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'JAK Medlemsbank',
+            regex   : /^(967[0-9])([0-9]{8})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Landshypotek',
+            regex   : /^(939[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Lån och Spar Bank Sverige',
+            regex   : /^(963[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'Länsförsäkringar Bank',
+            regex   : /^(340[0-9]|906[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'Länsförsäkringar Bank',
+            regex   : /^(902[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Marginalen Bank',
+            regex   : /^(923[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'Nordax Bank',
+            regex   : /^(964[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Nordea',
+            regex   : /^(11[0-9][0-9]|1[4-9][0-9][0-9]|20[0-9][0-9]|30[0-9][0-9]|330[1-9]|33[1-9][0-9]|34[1-9][0-9]|3[5-9][0-9][0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'Nordea',
+            regex   : /^(4[0-9][0-9][0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Nordea',
+            regex   : /^(3300|3782)([0-9]{10})$/,
+            modulo  : 10,
+            lengths : {
+                clearing : 4,
+                account  : 10,
+                control  : 10
+            }
+        },{
+            name    : 'Nordea',
+            regex   : /^([0-9][0-9])(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])([0-9]{4})$/,
+            modulo  : 10,
+            lengths : {
+                clearing : 0,
+                account  : 10,
+                control  : 10
+            }
+        },{
+            name    : 'Nordnet Bank',
+            regex   : /^(910[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Resurs Bank',
+            regex   : /^(928[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'Riksgälden',
+            regex   : /^(989[0-9])([0-9]{10})$/,
+            modulo  : 10,
+            lengths : {
+                clearing : 4,
+                account  : 10,
+                control  : 10
+            }
+        },{
+            name    : 'Royal Bank of Scotland',
+            regex   : /^(909[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Santander Consumer Bank',
+            regex   : /^(946[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'SBAB',
+            regex   : /^(925[0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'SEB',
+            regex   : /^(5[0-9][0-9][0-9]|912[0-4]|91[3-4][0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'Skandiabanken',
+            regex   : /^(91[5-6][0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        },{
+            name    : 'Sparbanken Syd',
+            regex   : /^(957[0-9])([0-9]{10})$/,
+            modulo  : 10,
+            lengths : {
+                clearing : 4,
+                account  : 10,
+                control  : 10
+            }
+        },{
+            name    : 'Swedbank',
+            regex   : /^(7[0-9][0-9][0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 10
+            }
+        },{
+            name    : 'Swedbank',
+            regex   : /^(93[0-2][0-9])([0-9]{10})$/,
+            modulo  : 10,
+            lengths : {
+                clearing : 4,
+                account  : 10,
+                control  : 10
+            }
+        },{
+            name    : 'Swedbank',
+            regex   : /^(8[0-9]{4})([0-9]{10})$/,
+            modulo  : 10,
+            lengths : {
+                clearing : 5,
+                account  : 10,
+                control  : 10
+            }
+        },{
+            name    : 'Ålandsbanken',
+            regex   : /^(23[0-9][0-9])([0-9]{7})$/,
+            modulo  : 11,
+            lengths : {
+                clearing : 4,
+                account  : 7,
+                control  : 11
+            }
+        }];
     
         for (i in banks) {
             b = banks[i];
-            if (b[2].test(n) && 
-                ((b[1][3] === 11 && mod11(n.substr(n.length-b[1][2], b[1][2]))) || 
-                (b[1][3] === 10 && mod10(n.substr(n.length-b[1][2], b[1][2]))))) {
+            cn = n.substr(-b.lengths.control, b.lengths.control);
+            if (b.regex.test(n) && ((b.modulo === 11 && mod11(cn)) || (b.modulo === 10 && mod10(cn)))) {
                 return {
-                    bank_name       : b[0],
-                    clearing_number : n.substr(0, b[1][0]),
-                    account_number  : n.substr(b[1][0], b[1][1])
+                    bank_name       : b.name,
+                    clearing_number : n.substr(0, b.lengths.clearing),
+                    account_number  : n.substr(b.lengths.clearing, b.lengths.account)
                 };
             }
         }
