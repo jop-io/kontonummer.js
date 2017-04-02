@@ -42,12 +42,12 @@ Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. F
 Ett demo finns tillgängligt här: [http://jop.io/projects/kontonummer-js](http://jop.io/projects/kontonummer-js)
 
 # Installation
-```javascript
-<script src="kontonummer.min.js"></script>
-```
+    npm install --save ajgarn/kontonummer.js
 
 # Användning
 ```javascript
+import kontonummer from 'kontonummer.js';
+
 var result = kontonummer('9420, 417 23 85');
 console.log(result);
 
