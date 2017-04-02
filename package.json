@@ -1,0 +1,10 @@
+{
+  "name": "kontonummer.js",
+  "description": "Bibliotek för att kontrollera och validera svenska bankkontonummer.",
+  "version": "1.0.0",
+  "main": "kontonummer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}
