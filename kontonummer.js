@@ -33,7 +33,7 @@
         if (typeof number !== 'string') {
             return false;
         }
-        var n = number.replace(/\D/g, ''), i, b, cn, 
+        var n = number.replace(/\D/g, ''), i, bank, ctrlNum, 
         banks = [{
             name    : 'Avanza Bank',
             regex   : /^(95[5-6][0-9])([0-9]{7})$/,
@@ -225,7 +225,7 @@
             }
         },{
             name    : 'Nordea',
-            regex   : /^(11[0-9][0-9]|1[4-9][0-9][0-9]|20[0-9][0-9]|30[0-9][0-9]|330[1-9]|33[1-9][0-9]|34[1-9][0-9]|3[5-9][0-9][0-9])([0-9]{7})$/,
+            regex   : /^(11[0-9][0-9]|1[4-9][0-9][0-9]|20[0-9][0-9]|3[0-2][0-9][0-9]|330[1-9]|33[1-9][0-9]|34[1-9][0-9]|3[5-9][0-9][0-9])([0-9]{7})$/,
             modulo  : 11,
             lengths : {
                 clearing : 4,
@@ -379,13 +379,13 @@
         }];
     
         for (i in banks) {
-            b = banks[i];
-            cn = n.substr(-b.lengths.control, b.lengths.control);
-            if (b.regex.test(n) && ((b.modulo === 11 && mod11(cn)) || (b.modulo === 10 && mod10(cn)))) {
+            bank = banks[i];
+            ctrlNum = n.substr(-bank.lengths.control, bank.lengths.control);
+            if (bank.regex.test(n) && ((bank.modulo === 11 && mod11(ctrlNum)) || (bank.modulo === 10 && mod10(ctrlNum)))) {
                 return {
-                    bank_name       : b.name,
-                    clearing_number : n.substr(0, b.lengths.clearing),
-                    account_number  : n.substr(b.lengths.clearing, b.lengths.account)
+                    bank_name       : bank.name,
+                    clearing_number : n.substr(0, bank.lengths.clearing),
+                    account_number  : n.substr(bank.lengths.clearing, bank.lengths.account)
                 };
             }
         }
@@ -414,7 +414,10 @@
      * @returns {Boolean}
      */
     var mod11 = function (number) {
-        var len = number.length, sum = 0, val, weights = [1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+        var len = number.length, 
+            sum = 0, 
+            val, 
+            weights = [1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
         var arr = weights.splice(weights.length-len, weights.length-(weights.length-len));
         while (len) {
             val = parseInt(number.charAt(--len), 10);
