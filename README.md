@@ -66,6 +66,7 @@ console.log(result); // false
 ```
 
 # Uppdateringar
+* 2017-12-08: Justerade kontroll av vissa clearingnummer för Nordea (tack till Staffan Garhammar som hittade detta!)
 * 2016-06-18: Adderade Riksgälden
 
 # Licens
