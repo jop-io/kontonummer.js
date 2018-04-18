@@ -376,23 +376,79 @@
      * @returns {Object|Boolean}
      */
     var kontonummer = function(number) {
+        var n = number.replace(/\D/g, ''), i, bank, errors = [], matches = [], invalidMatches = [];
+
         if (typeof number !== 'string') {
-            return false;
+            return {
+                isValid: false,
+                matches: matches,
+                invalidMatches: invalidMatches,
+                errors: errors
+            };
         }
-        var n = number.replace(/\D/g, ''), i, bank, ctrlNum, 
+
         for (i in banks) {
             bank = banks[i];
             var bankNumber = (bank.zerofill) ? fillZeros(n, bank) : n;
-            ctrlNum = bankNumber.substr(-bank.lengths.control, bank.lengths.control);
-            if (bank.regex.test(n) && ((bank.modulo === 11 && mod11(ctrlNum)) || (bank.modulo === 10 && mod10(ctrlNum)))) {
-                return {
-                    bank_name       : bank.name,
-                    clearing_number : n.substr(0, bank.lengths.clearing),
-                    account_number  : n.substr(bank.lengths.clearing, bank.lengths.account)
-                };
+
+            errors = errors.concat(validateLength(bank, bankNumber));
+
+            var numberChecksumValidation = validateChecksum(bank, bankNumber);
+            errors = errors.concat(numberChecksumValidation.errors);
+            invalidMatches = invalidMatches.concat(numberChecksumValidation.invalidMatches);
+            matches = matches.concat(numberChecksumValidation.matches);
+        }
+
+        if (matches.length === 0 && invalidMatches.length === 0) {
+            errors.push('unknown_clearing_number');
+        }
+
+        var unique = function (value, i) {
+            return errors.indexOf(value) === i;
+        }
+
+        errors = errors.filter(unique);
+
+        return {
+            isValid: Boolean(matches.length),
+            matches: matches,
+            invalidMatches: invalidMatches,
+            errors: errors
+        };
+    };
+
+    var validateLength = function(bank, bankNumber) {
+        var errors = [];
+
+        if (bank.regex.test(bankNumber)) {
+            if (bankNumber.length < bank.lengths.clearing + bank.lengths.account) {
+                errors.push('too_short');
+            } else if (bankNumber.length > bank.lengths.clearing + bank.lengths.account) {
+                errors.push('too_long');
             }
         }
-        return false;
+
+        return errors;
+    };
+
+    var validateChecksum = function(bank, bankNumber) {
+        var matches = [];
+        var errors = [];
+        var invalidMatches = [];
+        var ctrlNum = bankNumber.substr(-bank.lengths.control, bank.lengths.control);
+
+        if (bank.regex.test(bankNumber) && ((bank.modulo === 11 && mod11(ctrlNum)) || (bank.modulo === 10 && mod10(ctrlNum)))) {
+            matches.push(bank.name);
+        } else if (bank.regex.test(bankNumber)) {
+            errors.push('bad_checksum');
+            invalidMatches.push(bank.name);
+        }
+
+        return {
+            errors: errors,
+            invalidMatches: invalidMatches,
+            matches: matches
+        };
     };
     
     /**
