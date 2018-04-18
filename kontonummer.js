@@ -346,7 +346,8 @@
             clearing : 4,
             account  : 10,
             control  : 10
-        }
+        },
+        zerofill: true
     },{
         name    : 'Swedbank',
         regex   : /^(8[0-9]{4})(0*[0-9]+)$/,
@@ -355,7 +356,8 @@
             clearing : 5,
             account  : 10,
             control  : 10
-        }
+        },
+        zerofill: true
     },{
         name    : 'Ålandsbanken',
         regex   : /^(23[0-9][0-9])([0-9]+)$/,
@@ -380,7 +382,8 @@
         var n = number.replace(/\D/g, ''), i, bank, ctrlNum, 
         for (i in banks) {
             bank = banks[i];
-            ctrlNum = n.substr(-bank.lengths.control, bank.lengths.control);
+            var bankNumber = (bank.zerofill) ? fillZeros(n, bank) : n;
+            ctrlNum = bankNumber.substr(-bank.lengths.control, bank.lengths.control);
             if (bank.regex.test(n) && ((bank.modulo === 11 && mod11(ctrlNum)) || (bank.modulo === 10 && mod10(ctrlNum)))) {
                 return {
                     bank_name       : bank.name,
@@ -425,6 +428,22 @@
         }
         return sum && sum % 11 === 0;
     };
+
+    /**
+     * Fyll nollor för Swedbank bankkontonumren
+     *
+     * @param {String} number Bankkontonummer
+     * @param {Object} bank Bank object
+     * @returns {String} Bankkontonummer med nollor
+     */
+    var fillZeros = function (accountNumber, bank) {
+        var numberWithoutClearing = accountNumber.substr(bank.lengths.clearing);
+        while (numberWithoutClearing.length < bank.lengths.account) {
+            numberWithoutClearing = '0' + numberWithoutClearing;
+        }
+
+        return accountNumber.substr(0, bank.lengths.clearing).concat(numberWithoutClearing);
+    }
 
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = kontonummer;
