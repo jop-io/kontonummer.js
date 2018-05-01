@@ -42,7 +42,7 @@
             name: 'Amfa Bank',
             type: 1,
             comment: 2,
-            regex: /^966[0-9][0-9]{7}$/
+            regex: /^966[0-9]{8}$/
         },{
             name: 'Avanza Bank',
             type: 1,
