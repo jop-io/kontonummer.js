@@ -1,11 +1,5 @@
 # kontonummer.js
-Kontonummer.js är ett bibliotek för att kontrollera och validera kontonummer för svenska banker. Biblioteket kan användas för att ta reda på vilken bank ett kontonummer tillhör, samt om kontonumret valideras som giltigt.
-
-Bibliotekets parserings- och valideringsregler bygger på dessa dokument:
-* [Bankernas kontonummer](http://www.autogiro.se/globalassets/dokument/anvandarmanualer/bankernaskontonummeruppbyggnad_anvandarmanual_sv.pdf) (Bankgirot)
-* [Förteckning av clering- och bankkontonummer](https://www.nordea.se/Images/39-112644/F%C3%B6rteckning%20clearing-%20och%20bankkontonummer.pdf) (Nordea)
-
-Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. För närvarande stöds följande banker:
+Kontonummer.js är ett bibliotek för att kontrollera och validera kontonummer för svenska banker. Biblioteket kan användas för att ta reda på vilken bank ett kontonummer tillhör, samt om kontonumret valideras som giltigt. Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. För närvarande stöds följande banker:
 * Amfa Bank
 * Avanza Bank
 * BlueStep Finans
@@ -38,9 +32,9 @@ Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. F
 * Sparbanken Syd
 * Swedbank
 * Ålandsbanken
- 
+
 # Demo
-Ett demo finns tillgängligt här: [http://jop.io/projects/kontonummer-js](http://jop.io/projects/kontonummer-js)
+En demo finns tillgängligt här: [http://jop.io/projects/kontonummer-js](http://jop.io/projects/kontonummer-js)
 
 # Installation
 ```javascript
@@ -65,6 +59,10 @@ console.log(result);
 var result = kontonummer('123456789');
 console.log(result); // false
 ```
+
+# Bra att veta om clearingnummer som börjar med siffran 8 (Swedbank)
+1. Clearingnummer som börjar med siffran 8 består av totalt fem siffror, till skillnad från alla andra clearingnummer som består av fyra siffror.
+2. I sällsynta fall förekommer kontonummer inte alls kan kontrolleras genom vägning av kontrollsiffror. Dessa är i regel väldigt gamla kontonummer och få till antalet.
 
 # Uppdateringar
 * **2018-05-01**
