@@ -9,27 +9,28 @@ Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. F
 * Amfa Bank
 * Avanza Bank
 * BlueStep Finans
-* BNP
+* BNP Paribas SA.
 * Citibank
 * Danske Bank
-* DnB Bank
+* DNB Bank
 * Ekobanken
-* Erik Penser Bankaktiebolag
+* Erik Penser
 * Forex Bank
 * Handelsbanken
 * ICA Banken
-* IKANO Banken
+* IKANO Bank
 * JAK Medlemsbank
 * Landshypotek
-* Lån och Spar Bank Sverige
+* Lån & Spar Bank Sverige
 * Länsförsäkringar Bank
 * Marginalen Bank
+* MedMera Bank
 * Nordax Bank
 * Nordea
+* Plusgirot
 * Nordnet Bank
 * Resurs Bank
 * Riksgälden
-* Royal Bank of Scotland
 * Santander Consumer Bank
 * SBAB
 * SEB
@@ -66,8 +67,16 @@ console.log(result); // false
 ```
 
 # Uppdateringar
-* 2017-12-08: Justerade kontroll av vissa clearingnummer för Nordea (tack till Staffan Garhammar som hittade detta!)
-* 2016-06-18: Adderade Riksgälden
+* **2018-05-01**
+  * Adderade MedMera Bank
+  * Tog bort Royal Bank of Scotland (ej längre verksamma i Sverige)
+  * Rättade namn på vissa banker
+  * Omskrivning av regexpar för samtliga typer av konton. Dessa är nu både snabbare och mer lättlästa.
+  * Justering av en bugg som felaktigt invaliderade vissa kontonummer från Swedbank och Plusgirot. Tack till Linda Karlsson ([Knowit](http://www.knowit.se)) och Christian Zachariasen ([io7](http://www.io7.net)) som uppmärksammade detta!
+* **2017-12-08**
+  * Justerade kontroll av vissa clearingnummer för Nordea. Tack till [Staffan Garhammar](https://garhammar.se) som hittade detta!
+* **2016-06-18**
+  * Adderade Riksgälden
 
 # Licens
 Kontonummer.js omfattas av licensformen [MIT](https://opensource.org/licenses/MIT "The MIT License"). Varsågod!
