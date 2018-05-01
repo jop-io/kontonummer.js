@@ -61,7 +61,7 @@ console.log(result); // false
 ```
 
 # Bra att veta om clearingnummer som börjar med siffran 8 (Swedbank)
-1. Clearingnummer som börjar med siffran 8 består av totalt fem siffror, till skillnad från alla andra clearingnummer som består av fyra siffror.
+1. Clearingnummer som börjar med siffran 8 består av totalt [fem siffror](https://hjalp.swedbank.se/sidhjalp-internetbanken-privat/ordlista/c-h/index.htm#Clearingnummer), till skillnad från alla andra clearingnummer som består av fyra siffror.
 2. I sällsynta fall förekommer kontonummer inte alls kan kontrolleras genom vägning av kontrollsiffror. Dessa är i regel väldigt gamla kontonummer och få till antalet.
 
 # Uppdateringar
