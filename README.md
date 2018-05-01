@@ -71,7 +71,7 @@ console.log(result); // false
   * Adderade MedMera Bank
   * Tog bort Royal Bank of Scotland (ej längre verksamma i Sverige)
   * Rättade namn på vissa banker
-  * Omskrivning av regexpar för samtliga typer av konton. Dessa är nu både snabbare och mer lättlästa.
+  * Refaktorerade regexpar för samtliga typer av konton. Dessa är nu både snabbare och mer lättlästa. Bibliotekets storlek minskade från 4,8 KB till 3,4 KB (woohoo!!)
   * Justering av en bugg som felaktigt invaliderade vissa kontonummer från Swedbank och Plusgirot. Tack till Linda Karlsson ([Knowit](http://www.knowit.se)) och Christian Zachariasen ([io7](http://www.io7.net)) som uppmärksammade detta!
 * **2017-12-08**
   * Justerade kontroll av vissa clearingnummer för Nordea. Tack till [Staffan Garhammar](https://garhammar.se) som hittade detta!
