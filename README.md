@@ -1,3 +1,39 @@
+
+| Bank | Validering | BIC | IBAN |
+|------|------|------|------|
+| Amfa Bank | ✅  | ✅ | ✅ |
+| Avanza Bank | ✅  | ✅  | ✅ |
+| BNP Paribas | ✅  | ✅  | ✅ |
+| BlueStep Bank | ✅  | ✅  | ❌ |
+| Citibank | ✅  | ✅  | ✅ |
+| DNB Bank | ✅  | ✅  | ✅ |
+| Danske Bank | ✅  | ✅  | ✅ |
+| Ekobanken | ✅  | ✅  | ❌ |
+| Erik Penser | ✅  | ✅  | ✅ |
+| Forex Bank | ✅  | ✅  | ✅ |
+| Handelsbanken | ✅  | ✅  | ✅ |
+| ICA Banken | ✅  | ✅  | ✅ |
+| IKANO Bank | ✅  | ✅  | ✅ |
+| JAK Medlemsbank | ✅  | ✅  | ❌ |
+| Landshypotek | ✅  | ✅  | ✅ |
+| Länsförsäkringar Bank | ✅  | ✅  | ✅ |
+| Lån & Spar Bank | ✅  | ✅  | ✅ |
+| Marginalen Bank | ✅  | ✅  | ✅ |
+| MedMera Bank | ✅  | ✅  | ✅ |
+| Nordax Bank | ✅  | ✅  | ✅ |
+| Nordea | ✅  | ✅  | ✅ |
+| Nordnet Bank | ✅  | ✅  | ✅ |
+| Plusgirot | ✅  | ✅  | ✅ |
+| Resurs Bank | ✅  | ✅  | ✅ |
+| Riksgälden | ✅  | ✅  | ❌ |
+| SBAB | ✅  | ✅  | ❌ |
+| SEB | ✅  | ✅  | ✅ |
+| Santander Consumer Bank | ✅  | ✅  | ✅ |
+| Skandiabanken | ✅  | ✅  | ✅ |
+| Sparbanken Syd | ✅  | ✅  | ✅ |
+| Swedbank | ✅  | ✅  | ✅ |
+| Ålandsbanken | ✅  | ✅  | ✅ |
+
 # kontonummer.js
 Kontonummer.js är ett bibliotek för att kontrollera och validera kontonummer för svenska banker. Biblioteket kan användas för att ta reda på vilken bank ett kontonummer tillhör, samt om kontonumret valideras som giltigt. Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. För närvarande stöds följande banker:
 * Amfa Bank
