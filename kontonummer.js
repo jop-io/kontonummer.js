@@ -23,7 +23,7 @@ class Kontonummer {
             { name: 'Marginalen Bank',         type: 1, comment: 1, iban: 923, regex: /^923[0-9]{8}$/ },
             { name: 'MedMera Bank',            type: 1, comment: 2, iban: 965, regex: /^965[0-9]{8}$/ },
             { name: 'Nordax Bank',             type: 1, comment: 2, iban: 964, regex: /^964[0-9]{8}$/ },
-            { name: 'Nordea',                  type: 1, comment: 1, iban: 300, regex: /^(?!3300|2200)(1[1456789][0-9]{2}|20[0-9]{2}|3[0-3][0-9]{2}|34[1-9][0-9]|3[5-9][0-9]{2})[0-9]{7}$/ },
+            { name: 'Nordea',                  type: 1, comment: 1, iban: 300, regex: /^(?!3300|3782)(1[1456789][0-9]{2}|20[0-9]{2}|3[0-3][0-9]{2}|34[1-9][0-9]|3[5-9][0-9]{2})[0-9]{7}$/ },
             // { name: 'Nordea',                  type: 1, comment: 1, iban: 300, regex: /^(1[1456789][0-9]{2}|20[0-9]{2}|3[0-3][0-9]{2}|34[1-9][0-9]|3[5-9][0-9]{2})(?<!3300|3782)[0-9]{7}$/ },
             { name: 'Nordea',                  type: 1, comment: 2, iban: 300, regex: /^4[0-9]{10}$/ },
             { name: 'Nordnet Bank',            type: 1, comment: 2, iban: 910, regex: /^910[0-9]{8}$/ },
