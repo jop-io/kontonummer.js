@@ -23,7 +23,8 @@ class Kontonummer {
             { name: 'Marginalen Bank',         type: 1, comment: 1, iban: 923, regex: /^923[0-9]{8}$/ },
             { name: 'MedMera Bank',            type: 1, comment: 2, iban: 965, regex: /^965[0-9]{8}$/ },
             { name: 'Nordax Bank',             type: 1, comment: 2, iban: 964, regex: /^964[0-9]{8}$/ },
-            { name: 'Nordea',                  type: 1, comment: 1, iban: 300, regex: /^(1[1456789][0-9]{2}|20[0-9]{2}|3[0-3][0-9]{2}|34[1-9][0-9]|3[5-9][0-9]{2})(?<!3300|3782)[0-9]{7}$/ },
+            { name: 'Nordea',                  type: 1, comment: 1, iban: 300, regex: /^(?!3300|2200)(1[1456789][0-9]{2}|20[0-9]{2}|3[0-3][0-9]{2}|34[1-9][0-9]|3[5-9][0-9]{2})[0-9]{7}$/ },
+            // { name: 'Nordea',                  type: 1, comment: 1, iban: 300, regex: /^(1[1456789][0-9]{2}|20[0-9]{2}|3[0-3][0-9]{2}|34[1-9][0-9]|3[5-9][0-9]{2})(?<!3300|3782)[0-9]{7}$/ },
             { name: 'Nordea',                  type: 1, comment: 2, iban: 300, regex: /^4[0-9]{10}$/ },
             { name: 'Nordnet Bank',            type: 1, comment: 2, iban: 910, regex: /^910[0-9]{8}$/ },
             { name: 'Resurs Bank',             type: 1, comment: 1, iban: 928, regex: /^928[0-9]{8}$/ },
@@ -66,10 +67,10 @@ class Kontonummer {
         
     }
     
-    check(accountNumber)
+    validate(data)
     {
         this.bank   = null;
-        this.input  = accountNumber.toString().toUpperCase().replace(/[^A-Z0-9]/g, '');
+        this.input  = data.toString().toUpperCase().replace(/[^A-Z0-9]/g, '');
         let isIBAN  = this.isIBAN();
         this.IBANid = isIBAN ? window.parseInt(this.input.substr(4,3),10) : null;
         this.num    = isIBAN ? window.parseInt(this.input.substr(7).replace(/\D/g, ''), 10).toString() : 
@@ -91,13 +92,12 @@ class Kontonummer {
         
         return this.bank === null || (isIBAN && this.IBANid !== this.bank.iban) ? 
             false : 
-            this.validate();
+            this.doValidation();
     }
     
-    validate()
+    doValidation()
     {   
         this.clearing = this.num.substr(0,this.num.charAt(0) === "8" ? 5 : 4);
-        
         this.number =
             // Samtliga konton av typ 1
             this.bank.type === 1 ? this.num.substr(-7):
@@ -162,7 +162,11 @@ class Kontonummer {
     
     mod10()
     {
-        let len = this.modNum.length, bit = 1, sum = 0, val, arr = [0, 2, 4, 6, 8, 1, 3, 5, 7, 9];
+        let len = this.modNum.length, 
+            bit = 1, 
+            sum = 0, 
+            val = 0, 
+            arr = [0, 2, 4, 6, 8, 1, 3, 5, 7, 9];
         while (len)
         {
             val = parseInt(this.modNum.charAt(--len), 10);
@@ -173,8 +177,11 @@ class Kontonummer {
     
     mod11()
     {
-        let len = this.modNum.length, sum = 0, val, weights = [1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
-        let arr = weights.splice(weights.length-len, weights.length-(weights.length-len));
+        let len = this.modNum.length, 
+            sum = 0, 
+            val = 0, 
+            weights = [1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+            arr = weights.splice(weights.length-len, weights.length-(weights.length-len));
         while (len)
         {
             val = parseInt(this.modNum.charAt(--len), 10);
@@ -186,8 +193,6 @@ class Kontonummer {
 
 var kontonummer = new Kontonummer();
 
-kontonummer.support();
-
 //// TYP 1
 //console.log(kontonummer.check("94204172385"));
 //console.log(kontonummer.check("9252, 0782455"));
@@ -198,17 +203,9 @@ kontonummer.support();
 //console.log(kontonummer.check("8299-1, 2814958514"));
 //console.log(kontonummer.check("6189834435918"));
 
-console.log(kontonummer.check("SE5780000829902814958514"));
-console.log(kontonummer.check("94204172385"));
-console.log(kontonummer.check("SE4250000000055651015566"));
 
-console.log(kontonummer.check("96676543210"));
-console.log(kontonummer.check("96676543211"));
-console.log(kontonummer.check("96676543212"));
-console.log(kontonummer.check("96676543213"));
-console.log(kontonummer.check("96676543214"));
-console.log(kontonummer.check("96676543215"));
-console.log(kontonummer.check("96676543216"));
-console.log(kontonummer.check("96676543217"));
-console.log(kontonummer.check("96676543218"));
-console.log(kontonummer.check("96676543219"));
+console.log(kontonummer.validate("8304-8, 230477044"));
+console.log(kontonummer.validate("SE5780000829902814958514"));
+console.log(kontonummer.validate("94204172385"));
+console.log(kontonummer.validate("SE4250000000055651015566"));
+console.log(kontonummer.validate("96676543216"));
