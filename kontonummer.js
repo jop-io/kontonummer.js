@@ -38,7 +38,7 @@
             return false;
         }
         var n = number.replace(/\D/g, ''), i, bank, 
-        banks = banks = [{
+        banks = [{
             name: 'Amfa Bank',
             type: 1,
             comment: 2,
