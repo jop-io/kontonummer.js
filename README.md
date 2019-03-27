@@ -37,11 +37,22 @@ Kontonummer.js är ett bibliotek för att kontrollera och validera kontonummer f
 En demo finns tillgängligt här: [http://jop.io/projects/kontonummer-js](http://jop.io/projects/kontonummer-js)
 
 # Installation
-    npm install --save ajgarn/kontonummer.js
+
+Node
+```
+npm install --save ajgarn/kontonummer.js
+```
+
+I webbläsare
+```javascript
+<script src="kontonummer.min.js"></script>
+```
 
 # Användning
+
+Node
 ```javascript
-import kontonummer from 'kontonummer.js';
+import { kontonummer } from 'kontonummer.js';
 
 var result = kontonummer('9420, 417 23 85');
 console.log(result);
@@ -58,6 +69,12 @@ console.log(result);
 ```javascript
 var result = kontonummer('123456789');
 console.log(result); // false
+```
+
+I webbläsare
+```javascript
+var result = kontonummer('9420, 417 23 85');
+console.log(result);
 ```
 
 # Bra att veta om clearingnummer som börjar med siffran 8 (Swedbank)

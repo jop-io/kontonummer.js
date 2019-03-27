@@ -20,7 +20,7 @@
  * Licens: MIT
  * Författare: @jop-io, http://jop.io
  */
-;(function (window, undefined)
+;(function (container, undefined)
 {
     "use strict";
     
@@ -30,7 +30,7 @@
      * @param {String} number Bankkontonummer
      * @returns {Object|Boolean}
      */
-    window.kontonummer = function(number)
+    container.kontonummer = function(number)
     {
         if (typeof number !== 'string')
         {
@@ -318,4 +318,4 @@
         }
         return sum && sum % 11 === 0;
     };
-}(window));
+}(typeof exports === 'undefined' ? window : exports));
