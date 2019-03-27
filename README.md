@@ -1,35 +1,30 @@
 # kontonummer.js
-Kontonummer.js är ett bibliotek för att kontrollera och validera kontonummer för svenska banker. Biblioteket kan användas för att ta reda på vilken bank ett kontonummer tillhör, samt om kontonumret valideras som giltigt.
-
-Bibliotekets parserings- och valideringsregler bygger på dessa dokument:
-* [Bankernas kontonummer](https://www.bankgirot.se/globalassets/dokument/anvandarmanualer/bankernaskontonummeruppbyggnad_anvandarmanual_sv.pdf) (Bankgirot)
-* [Förteckning av clering- och bankkontonummer](https://www.nordea.se/Images/39-112644/F%C3%B6rteckning%20clearing-%20och%20bankkontonummer.pdf) (Nordea)
-
-Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. För närvarande stöds följande banker:
+Kontonummer.js är ett bibliotek för att kontrollera och validera kontonummer för svenska banker. Biblioteket kan användas för att ta reda på vilken bank ett kontonummer tillhör, samt om kontonumret valideras som giltigt. Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. För närvarande stöds följande banker:
 * Amfa Bank
 * Avanza Bank
 * BlueStep Finans
-* BNP
+* BNP Paribas SA.
 * Citibank
 * Danske Bank
-* DnB Bank
+* DNB Bank
 * Ekobanken
-* Erik Penser Bankaktiebolag
+* Erik Penser
 * Forex Bank
 * Handelsbanken
 * ICA Banken
-* IKANO Banken
+* IKANO Bank
 * JAK Medlemsbank
 * Landshypotek
-* Lån och Spar Bank Sverige
+* Lån & Spar Bank Sverige
 * Länsförsäkringar Bank
 * Marginalen Bank
+* MedMera Bank
 * Nordax Bank
 * Nordea
+* Plusgirot
 * Nordnet Bank
 * Resurs Bank
 * Riksgälden
-* Royal Bank of Scotland
 * Santander Consumer Bank
 * SBAB
 * SEB
@@ -37,9 +32,9 @@ Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. F
 * Sparbanken Syd
 * Swedbank
 * Ålandsbanken
- 
+
 # Demo
-Ett demo finns tillgängligt här: [http://jop.io/projects/kontonummer-js](http://jop.io/projects/kontonummer-js)
+En demo finns tillgängligt här: [http://jop.io/projects/kontonummer-js](http://jop.io/projects/kontonummer-js)
 
 # Installation
     npm install --save ajgarn/kontonummer.js
@@ -65,8 +60,21 @@ var result = kontonummer('123456789');
 console.log(result); // false
 ```
 
+# Bra att veta om clearingnummer som börjar med siffran 8 (Swedbank)
+1. Clearingnummer som börjar med siffran 8 består av totalt [fem siffror](https://hjalp.swedbank.se/sidhjalp-internetbanken-privat/ordlista/c-h/index.htm#Clearingnummer), till skillnad från alla andra clearingnummer som består av fyra siffror.
+2. I sällsynta fall förekommer kontonummer som inte alls kan kontrolleras genom vägning av kontrollsiffror. Dessa är i regel väldigt gamla kontonummer och få till antalet.
+
 # Uppdateringar
-* 2016-06-18: Adderade Riksgälden
+* **2018-05-01**
+  * Adderade MedMera Bank
+  * Tog bort Royal Bank of Scotland (ej längre verksamma i Sverige)
+  * Rättade namn på vissa banker
+  * Refaktorerade regexpar för samtliga typer av konton. Dessa är nu både snabbare och mer lättlästa. Bibliotekets storlek minskade från 4,8 KB till 3,4 KB (woohoo!!)
+  * Justering av en bugg som felaktigt invaliderade vissa kontonummer från Swedbank och Plusgirot. Tack till Linda Karlsson ([Knowit](http://www.knowit.se)) och Christian Zachariasen ([io7](http://www.io7.net)) som uppmärksammade detta!
+* **2017-12-08**
+  * Justerade kontroll av vissa clearingnummer för Nordea. Tack till [Staffan Garhammar](https://garhammar.se) som hittade detta!
+* **2016-06-18**
+  * Adderade Riksgälden
 
 # Licens
 Kontonummer.js omfattas av licensformen [MIT](https://opensource.org/licenses/MIT "The MIT License"). Varsågod!
