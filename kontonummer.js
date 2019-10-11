@@ -39,7 +39,7 @@
         }
         var n = number.replace(/\D/g, ''), i, bank, 
         banks = [{
-            name: 'Amfa Bank',
+            name: 'Svea Bank',
             type: 1,
             comment: 2,
             regex: /^966[0-9]{8}$/
