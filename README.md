@@ -1,6 +1,6 @@
 # kontonummer.js
 Kontonummer.js är ett bibliotek för att kontrollera och validera kontonummer för svenska banker. Biblioteket kan användas för att ta reda på vilken bank ett kontonummer tillhör, samt om kontonumret valideras som giltigt. Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. För närvarande stöds följande banker:
-* Amfa Bank
+* Svea Bank
 * Avanza Bank
 * BlueStep Finans
 * BNP Paribas SA.
@@ -14,6 +14,7 @@ Kontonummer.js är ett bibliotek för att kontrollera och validera kontonummer f
 * ICA Banken
 * IKANO Bank
 * JAK Medlemsbank
+* Klarna Bank
 * Landshypotek
 * Lån & Spar Bank Sverige
 * Länsförsäkringar Bank
