@@ -211,7 +211,7 @@
             comment: 2,
             regex: /^6[0-9]{12}$/
         },{
-            name: 'Nordera Plusgirot',
+            name: 'Nordea Plusgirot',
             type: 2,
             comment: 3,
             regex: /^(95[0-4]|996)[0-9]{8,11}$/ // Clearingnr 4 siffror, räkningsnr 7-10 siffror
