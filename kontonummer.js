@@ -103,6 +103,11 @@
             type: 1,
             comment: 2,
             regex: /^967[0-9]{8}$/
+        }, {
+            name: 'Klarna Bank',
+            type: 1,
+            comment: 2,
+            regex: /^978[0-9]{8}$/
         },{
             name: 'Landshypotek',
             type: 1,
