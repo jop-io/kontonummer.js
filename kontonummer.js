@@ -280,7 +280,7 @@
             bank.type === 1 && bank.comment === 1 ? mod11((clearing+number).substr(-10)):
             bank.type === 1 && bank.comment === 2 ? mod11((clearing+number)):
             bank.type === 2 && bank.comment === 2 ? mod11(number):
-            mod10(number);
+            mod10(number) && (clearing.charAt(0) === "8" ? mod10(clearing) : true);
         
         return !modResult ? false : {
             bank_name: bank.name,
