@@ -34,9 +34,6 @@ Kontonummer.js är ett bibliotek för att kontrollera och validera kontonummer f
 * Swedbank
 * Ålandsbanken
 
-# Demo
-En demo finns tillgängligt här: [http://jop.io/projects/kontonummer-js](http://jop.io/projects/kontonummer-js)
-
 # Installation
 ```javascript
 <script src="kontonummer.min.js"></script>
