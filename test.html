@@ -41,6 +41,12 @@
         test(nordeaPersonnumber.clearing_number === '3300', 'Nordea personnumber bank account number returns correct clearing number');
         test(nordeaPersonnumber.account_number === '0006205124', 'Nordea personnumber bank account number returns correct account number');
 
+        const klarna = kontonummer('97891111113');
+
+        test(klarna.bank_name === 'Klarna Bank', 'Klarna Bank bank account number returns correct bank name');
+        test(klarna.clearing_number === '9789', 'Klarna Bank bank account number returns correct clearing number');
+        test(klarna.account_number === '1111113', 'Klarna Bank bank account number returns correct account number');
+
         const invalid = kontonummer('123456789');
 
         test(invalid === false, 'Invalid bank account numbers returns false');
