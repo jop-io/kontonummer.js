@@ -35,6 +35,18 @@
         test(swedbank5.clearing_number === '84244', 'Swedbank bank account number with a five digit clearing number returns correct clearing number');
         test(swedbank5.account_number === '9831892246', 'Swedbank bank account number with a five digit clearing number returns correct account number');
 
+        const sparbankenTanum = kontonummer('8351-9,392 242 224-5');
+
+        test(sparbankenTanum.bank_name === 'Swedbank', 'Sparbanken Tanum bank account number returns correct bank name');
+        test(sparbankenTanum.clearing_number === '83519', 'Sparbanken Tanum account number returns correct clearing number');
+        test(sparbankenTanum.account_number === '3922422245', 'Sparbanken Tanum account number returns correct account number');
+
+        const hudik = kontonummer('8129-9,043 386 711-6');
+
+        test(hudik.bank_name === 'Swedbank', 'Sparbank i Hudiksvall bank account number returns correct bank name');
+        test(hudik.clearing_number === '81299', 'Sparbank i Hudiksvall account number returns correct clearing number');
+        test(hudik.account_number === '0433867116', 'Sparbank i Hudiksvall account number returns correct account number');
+
         const nordeaPersonnumber = kontonummer('3300 000620-5124');
 
         test(nordeaPersonnumber.bank_name === 'Nordea', 'Nordea personnumber bank account number returns correct bank name');
@@ -54,6 +66,10 @@
         const invalidControl = kontonummer('6789123456788');
 
         test(invalidControl === false, 'Invalid control digit invalidates entire number');
+
+        const invalidClearing = kontonummer('8424-1,983 189 224-6');
+
+        test(invalidClearing === false, 'Invalid control digit in clearing number invalidates entire number');
     </script>
 </head>
 <body>
