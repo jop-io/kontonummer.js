@@ -39,7 +39,7 @@
         }
         var n = number.replace(/\D/g, ''), i, bank, 
         banks = [{
-            name: 'Amfa Bank',
+            name: 'Svea Bank',
             type: 1,
             comment: 2,
             regex: /^966[0-9]{8}$/
@@ -103,6 +103,11 @@
             type: 1,
             comment: 2,
             regex: /^967[0-9]{8}$/
+        }, {
+            name: 'Klarna Bank',
+            type: 1,
+            comment: 2,
+            regex: /^978[0-9]{8}$/
         },{
             name: 'Landshypotek',
             type: 1,
@@ -206,7 +211,7 @@
             comment: 2,
             regex: /^6[0-9]{12}$/
         },{
-            name: 'Nordera Plusgirot',
+            name: 'Nordea Plusgirot',
             type: 2,
             comment: 3,
             regex: /^(95[0-4]|996)[0-9]{8,11}$/ // Clearingnr 4 siffror, räkningsnr 7-10 siffror
