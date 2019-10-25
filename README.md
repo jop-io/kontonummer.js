@@ -66,6 +66,9 @@ console.log(result); // false
 2. I sällsynta fall förekommer kontonummer som inte alls kan kontrolleras genom vägning av kontrollsiffror. Dessa är i regel väldigt gamla kontonummer och få till antalet.
 
 # Uppdateringar
+* **2019-10-25** (uppdateringar av [Tobbe Lundberg](https://github.com/Tobbe))
+  * Adderade Klarna Bank
+  * Rättade namn och stavfel på vissa banker
 * **2018-05-01**
   * Adderade MedMera Bank
   * Tog bort Royal Bank of Scotland (ej längre verksamma i Sverige)
