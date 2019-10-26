@@ -9,13 +9,13 @@
  * Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. 
  * För närvarande stöds följande banker:
  * 
- *  Amfa Bank, Avanza Bank, BlueStep Finans, BNP Paribas SA., Citibank, 
+ *  Svea Bank, Avanza Bank, BlueStep Finans, BNP Paribas SA., Citibank, 
  *  Danske Bank, DNB Bank, Ekobanken, Erik Penser, Forex Bank, Handelsbanken, 
- *  ICA Banken, IKANO Bank, JAK Medlemsbank, Landshypotek, Lån & Spar Bank 
- *  Sverige, Länsförsäkringar Bank, Marginalen Bank, MedMera Bank, Nordax Bank, 
- *  Nordea, Nordera Plusgirot, Nordnet Bank, Resurs Bank, Riksgälden, 
- *  Santander Consumer Bank, SBAB, SEB, Skandiabanken, Sparbanken Syd, Swedbank, 
- *  Ålandsbanken
+ *  ICA Banken, IKANO Bank, JAK Medlemsbank, Klarna Bank, Landshypotek, Lån & 
+ *  Spar Bank Sverige, Länsförsäkringar Bank, Marginalen Bank, MedMera Bank, 
+ *  Nordax Bank, Nordea, Nordea Plusgirot, Nordnet Bank, Resurs Bank, 
+ *  Riksgälden, Santander Consumer Bank, SBAB, SEB, Skandiabanken, Sparbanken 
+ *  Syd, Swedbank, Ålandsbanken
  * 
  * Licens: MIT
  * Författare: @jop-io, http://jop.io
@@ -234,7 +234,7 @@
             name: 'Swedbank',
             type: 2,
             comment: 3,
-            regex: /^8[0-9]{10,14}$/ // Clearingnr 5 siffror, räkningsnr 7-10 siffror
+            regex: /^8[0-9]{10,14}$/ // Clearingnr 5 siffror, räkningsnr 6-10 siffror
         },{
             name: 'Swedbank',
             type: 2,
