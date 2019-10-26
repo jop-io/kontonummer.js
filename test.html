@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <script src="./kontonummer.js"></script>
+
+    <script>
+        function test(condition, message) {
+            const red = str => '<span style="color: red">' + str + '</span>';
+            const green = str => '<span style="color: green">' + str + '</span>';
+
+            if (typeof message === 'string' && condition) {
+                document.write(green('✔ ' + message + '<br>\n'));
+            } else {
+                document.write(red('✖ ' + message + '<br>\n'));
+            }
+        }
+
+        const forex = kontonummer('9420, 417 23 85');
+
+        test(forex.bank_name === 'Forex Bank', 'Forex Bank bank account number returns correct bank name');
+        test(forex.clearing_number === '9420', 'Forex Bank bank account number returns correct clearing number');
+        test(forex.account_number === '4172385', 'Forex Bank bank account number returns correct account number');
+
+        const handelsbanken = kontonummer('6789123456789');
+
+        test(handelsbanken.bank_name === 'Handelsbanken', 'Handelsbanken bank account number returns correct bank name');
+        test(handelsbanken.clearing_number === '6789', 'Handelsbanken bank account number returns correct clearing number');
+        test(handelsbanken.account_number === '123456789', 'Handelsbanken bank account number returns correct account number');
+
+        const swedbank5 = kontonummer('8424-4,983 189 224-6');
+
+        test(swedbank5.bank_name === 'Swedbank', 'Swedbank bank account number with a five digit clearing number returns correct bank name');
+        test(swedbank5.clearing_number === '84244', 'Swedbank bank account number with a five digit clearing number returns correct clearing number');
+        test(swedbank5.account_number === '9831892246', 'Swedbank bank account number with a five digit clearing number returns correct account number');
+
+        const nordeaPersonnumber = kontonummer('3300 000620-5124');
+
+        test(nordeaPersonnumber.bank_name === 'Nordea', 'Nordea personnumber bank account number returns correct bank name');
+        test(nordeaPersonnumber.clearing_number === '3300', 'Nordea personnumber bank account number returns correct clearing number');
+        test(nordeaPersonnumber.account_number === '0006205124', 'Nordea personnumber bank account number returns correct account number');
+
+        const klarna = kontonummer('97891111113');
+
+        test(klarna.bank_name === 'Klarna Bank', 'Klarna Bank bank account number returns correct bank name');
+        test(klarna.clearing_number === '9789', 'Klarna Bank bank account number returns correct clearing number');
+        test(klarna.account_number === '1111113', 'Klarna Bank bank account number returns correct account number');
+
+        const invalid = kontonummer('123456789');
+
+        test(invalid === false, 'Invalid bank account numbers returns false');
+
+        const invalidControl = kontonummer('6789123456788');
+
+        test(invalidControl === false, 'Invalid control digit invalidates entire number');
+    </script>
+</head>
+<body>
+</body>
+</html> 
