@@ -67,6 +67,7 @@
 
         test(invalidControl === false, 'Invalid control digit invalidates entire number');
 
+        // Same account number as 'swedbank5' above, but different clearing number
         const invalidClearing = kontonummer('8424-1,983 189 224-6');
 
         test(invalidClearing === false, 'Invalid control digit in clearing number invalidates entire number');
