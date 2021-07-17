@@ -159,6 +159,11 @@
             comment: 2,
             regex: /^910[0-9]{8}$/
         },{
+            name: 'Northmill Bank AB',
+            type: 1,
+            comment: 2,
+            regex: /^975[0-9]{8}$/
+        },{
             name: 'Resurs Bank',
             type: 1,
             comment: 1,
