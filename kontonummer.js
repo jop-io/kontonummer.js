@@ -242,7 +242,7 @@
             regex: /^93[0-4][0-9]{11}$/
         }];
         
-        for (i in banks)
+        for (i = 0; i < banks.length; i++)
         {
             bank = banks[i];
             if (bank.regex.test(n))
