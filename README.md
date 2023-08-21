@@ -1,4 +1,21 @@
-# kontonummer.js
+# ⚠️ THIS REPO IS NO LONGER MAINTAINED
+I no longer maintain this code.
+Please have a look at Svante Bengtson's (much better) implementaion of Kontonummer.js: https://github.com/swantzter/kontonummer
+
+Svante's code is also availavle as NPM package: https://npmjs.com/package/kontonummer
+
+Why are you still here...? Please go away!
+
+.
+
+.
+
+.
+
+.
+
+
+## kontonummer.js
 Kontonummer.js är ett bibliotek för att kontrollera och validera kontonummer för svenska banker. Biblioteket kan användas för att ta reda på vilken bank ett kontonummer tillhör, samt om kontonumret valideras som giltigt. Målsättningen är att stödja samtliga banker vilka är verksamma i Sverige. För närvarande stöds följande banker:
 * Svea Bank
 * Avanza Bank
