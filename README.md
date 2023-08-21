@@ -2,7 +2,7 @@
 I no longer maintain this code.
 Please have a look at Svante Bengtson's (much better) implementaion of Kontonummer.js: https://github.com/swantzter/kontonummer
 
-Svante's code is also availavle as NPM package: https://npmjs.com/package/kontonummer
+Svante's code is also available as NPM package: https://npmjs.com/package/kontonummer
 
 Why are you still here...? Please go away!
 
