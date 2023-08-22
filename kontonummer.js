@@ -209,7 +209,7 @@
             name: 'Handelsbanken',
             type: 2,
             comment: 2,
-            regex: /^6[0-9]{12}$/
+            regex: /^6[0-9]{11,12}$/
         },{
             name: 'Nordea Plusgirot',
             type: 2,
@@ -229,7 +229,7 @@
             name: 'Sparbanken Syd',
             type: 2,
             comment: 1,
-            regex: /^957[0-9]{11}$/
+            regex: /^957[0-9]{8,11}$/
         },{
             name: 'Swedbank',
             type: 2,
@@ -268,13 +268,13 @@
             // Samtliga konton av typ 1
             bank.type === 1 ? accnum.substr(-7):
             // Handelsbankens koton av typ 2
-            bank.type === 2 && bank.comment === 2 ? accnum.substr(-9):
+            bank.type === 2 && bank.comment === 2 ? accnum.substr(4):
             // Swedbanks konton av typ 2 
             bank.type === 2 && bank.comment === 3 && accnum.charAt(0) === "8" ? accnum.substr(5):
             // Plusgirots konton av typ 2
             bank.type === 2 && bank.comment === 3 && accnum.charAt(0) === "9" ? accnum.substr(4):
             // Resterande konton av typ 2
-            accnum.substr(-10);
+            accnum.substr(4);
         
         let modResult = 
             bank.type === 1 && bank.comment === 1 ? mod11((clearing+number).substr(-10)):
