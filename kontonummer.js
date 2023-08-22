@@ -13,9 +13,9 @@
  *  Danske Bank, DNB Bank, Ekobanken, Erik Penser, Forex Bank, Handelsbanken, 
  *  ICA Banken, IKANO Bank, JAK Medlemsbank, Klarna Bank, Landshypotek, Lån & 
  *  Spar Bank Sverige, Länsförsäkringar Bank, Marginalen Bank, MedMera Bank, 
- *  Nordax Bank, Nordea, Nordea Plusgirot, Nordnet Bank, Resurs Bank, 
- *  Riksgälden, Santander Consumer Bank, SBAB, SEB, Skandiabanken, Sparbanken 
- *  Syd, Swedbank, Ålandsbanken
+ *  Nordax Bank, Nordea, Nordea Plusgirot, Nordnet Bank, Northmill Bank AB,
+ *  Resurs Bank, Riksgälden, Santander Consumer Bank, SBAB, SEB, Skandiabanken,
+ *  Sparbanken Syd, Swedbank, Ålandsbanken
  * 
  * Licens: MIT
  * Författare: @jop-io, http://jop.io
@@ -158,6 +158,11 @@
             type: 1,
             comment: 2,
             regex: /^910[0-9]{8}$/
+        },{
+            name: 'Northmill Bank AB',
+            type: 1,
+            comment: 2,
+            regex: /^975[0-9]{8}$/
         },{
             name: 'Resurs Bank',
             type: 1,
